@@ -1,0 +1,13 @@
+[Unit]
+Description=Reconnect Hyprland monitors after wake from sleep
+After=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+ExecStop=/home/preddy/.config/hypr/scripts/monitor-post-sleep.sh
+
+[Install]
+WantedBy=sleep.target
